@@ -1,0 +1,139 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+
+        <section class="boxone">
+       <div class="container">
+        <div class="left">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2>
+            <button class="btn-yellow">Learn More</button>
+        </div>
+        <div class="right">
+            <div class="mindre-ruta">
+                <h5>Lorem ipsum dolor sit amet</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,consectetur adipiscing elit. </p>
+            </div>
+              <div class="mindre-ruta">
+                <h5>Lorem ipsum dolor sit amet</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </div>
+              <div class="mindre-ruta">
+                <h5>Lorem ipsum dolor sit amet</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </div>
+              <div class="mindre-ruta">
+                <h5>Lorem ipsum dolor sit amet</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </div>
+        </div>
+    </div>
+    </section>
+    
+            <section class="boxtwo">
+       <div class="container">
+        <div class="left">
+          @{
+                    var homeone = Model.Value<MediaWithCrops>("homeone");
+                    if (homeone != null)
+                    {
+                    <img src="@homeone.MediaUrl()" alt="@Model.Value("homeone")">
+                    }
+                    
+                    }
+                    
+        </div>
+        <div class="right">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            </p>
+            <button class="btn-black">More</button>
+        </div>
+    </div>
+    </section>
+    
+    
+    <section class="boxthree">
+        <h2>Lorem Ipsum</h2>
+        <div class="container">
+            
+            <div class="square">
+                <h5>Lorem ipsum dolor sit amet</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </div>
+            <div class="square">
+                 <h5>Lorem ipsum dolor sit amet</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </div>
+            <div class="square">
+                 <h5>Lorem ipsum dolor sit amet</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </div>
+            <div class="square">
+                 <h5>Lorem ipsum dolor sit amet</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </div>
+        </div>
+    </section>
+ 
+         <section class="boxfour">
+       <div class="container">
+        <div class="left">
+        <h2>Lorem ipsum dolor<br> sit amet </h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        
+        
+                    
+        </div>
+        <div class="right">
+            @{
+                    var hometwo = Model.Value<MediaWithCrops>("hometwo");
+                    if (hometwo != null)
+                    {
+                    <img src="@hometwo.MediaUrl()" alt="@Model.Value("hometwo")">
+                    }
+                    
+                    }
+        </div>
+    </div>
+    </section>
+    
+    
+     <section class="boxfive">
+        
+        <div class="container">
+            <h2>Lorem Ipsum</h2>
+             @{
+        var homethree = Model.Value<IEnumerable<MediaWithCrops>>("homethree");
+        foreach (var entry in homethree){
+        <img src="@entry.MediaUrl()" alt="">
+        }
+         
+        }
+         
+        
+        
+        <div class="box-white">
+            <h2>Lorem Ipsum</h2>
+            <div class="box-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                
+            </div>
+        </div>
+        </div>
+    </section>
+    
+    
+    
+    
+     <section class="boxseven">
+        <h1>Sign up for newsletter</h1>
+        <div class="placeholder">
+            <input type="email" class="input-falt" placeholder="Email">
+            <button class="send-knapp">Send</button>
+        </div>
+    </section>

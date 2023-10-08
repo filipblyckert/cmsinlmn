@@ -1,0 +1,59 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.News>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.PublishedContent;
+@{
+	Layout = "LayoutWithBreadcrumb.cshtml";
+}
+
+<section class="article-section">
+            <div class="container">
+                <div class="browse-news">
+                    <h2>Our News & Articles</h2>
+                </div>
+                <div class="articles">
+                    
+                    
+                    @{
+                    
+                        var selection = Umbraco?.Content(Guid.Parse("0fa1ce88-d77d-4840-a3f2-ff116f763f69"))?
+                        .ChildrenOfType("newsItemPage")?
+                        .Where(x=> x.IsVisible())
+                        .OrderByDescending(x=> x.CreateDate).ToList();
+                    
+                    }
+                    
+                    @if(selection !=null)
+                    {
+                        @foreach (var item in selection)
+                        {
+                            var url = item.Url();
+                            var date = item.CreateDate;
+                            var image = item.Value<IPublishedContent>("newsImage");
+                            var category = item.Value("newsCategory");
+                            var title = item.Name();
+                            var preamble = item.Value("newsPreamble");
+                            
+                            <a  class="article" href="@url">
+                                <div class="article-date">
+                                    <div class="day">@date.ToString("dd")</div>
+                                    <div class="month">@date.ToString("MMM")</div>
+                                </div>
+                                <img src="@image.Url()" alt="">
+                                <p class="category">@category</p>
+                                <h5>@title</h5>
+                                <p>@preamble</p>
+                            </a>
+                            
+                          
+                        
+                        }
+                    
+                    }
+                    
+                    
+                </div>
+            </div>    
+    </section>           
+
+

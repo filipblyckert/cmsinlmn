@@ -1,0 +1,70 @@
+﻿@using Umbraco.Cms.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+<footer>
+    <section class="footer-section">
+        <div class="container">
+            <div class="logo">
+                 @{
+                    var footerLogo = Model.Value<MediaWithCrops>("footerLogo");
+                    if (footerLogo != null)
+                    {
+                    <img src="@footerLogo.MediaUrl()" alt="@Model.Value("footerLogo")">
+                    }
+                    
+                    }
+                    
+                
+                <p>Lorem Ipsum dolor sit amet <br> consectetur adipisicing elit. placeat <br> obcaecati voluptas voluptates! <br> Voluptates laborum nam ratione <br>minus necessitatibus, iure <br> praesentium
+                </p>
+            </div>
+            <div>
+                <h5>Company</h5>
+                <ul>
+                    <li><a class="links" href="/about">About</a></li>
+                    <li><a class="links" href="/features">Features</a></li>
+                    <li><a class="links" href="/work">Works</a></li>
+                    <li><a class="links" href="/career">Career</a></li>
+                </ul>
+            </div>
+              <div>
+                <h5>Help</h5>
+                <ul>
+                    <li><a class="links" href="/support">Customer Support</a></li>
+                    <li><a class="links" href="/delivery">Delivery Details</a></li>
+                    <li><a class="links" href="/agreements/terms">Terms & Conditions</a></li>
+                    <li><a class="links" href="/agreements/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+               <div>
+                <h5>Resources</h5>
+                <ul>
+                    <li><a class="links" href="/free/ebook">Free eBooks</a></li>
+                    <li><a class="links" href="/tutorials/development">Development Tutorials</a></li>
+                    <li><a class="links" href="/guides/how-to-blog">How to - Blog</a></li>
+                    <li><a class="links" href="https://youtube.com" target="_blank">Youtube Playlist</a></li>
+                </ul>
+            </div>
+              <div>
+                <h5>Link</h5>
+                <ul class="link">
+                    <li><a class="links" href="/free/ebook">Free eBooks</a></li>
+                    <li><a class="links" href="/tutorials/development">Development Tutorials</a></li>
+                    <li><a class="links" href="/guides/how-to-blog">How to - Blog</a></li>
+                    <li><a class="links" href="https://youtube.com" target="_blank">Youtube Playlist</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="copyright-section">
+        <div class="container">
+            <p>Crito - Consulting Company Inc. All Rights Reserved.</p>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+</footer>
