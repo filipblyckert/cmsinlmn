@@ -3,6 +3,7 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "LayoutWithBreadcrumb.cshtml";
+    var contactForm = new ContactForm();
 }
 
 <section class="contactinfo-section">
@@ -38,23 +39,32 @@
 <section class="contactform-section">
     <div class="container">
         <h2>Leave us a message for any information</h2>
-        <form action="contact.php" method="POST" id="contact-form">
-            <div class="form-group">
-                <label for="name"></label>
-                <input name="name" type="text" id="name" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email"></label>
-                <input name="email" type="email" id="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="message"></label>
-                <textarea name="message" id="message" placeholder="Your message" rows="4" required></textarea>
-            </div>
-            <div class="d-grid">
-                <button class="btn-yellow" type="submit">Send Message <i class="fa-solid fa-arrow-up-right"></i></button>
-            </div>
-        </form>
+
+
+
+        @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post))
+        {
+
+        <div class="form-group">
+            <label for="name"></label>
+            <input asp-for="@contactForm.Name" type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="email"></label>
+            <input asp-for="@contactForm.Email" type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="message"></label>
+            <textarea asp-for="@contactForm.Message" id="message" placeholder="Your message" rows="4" required></textarea>
+        </div>
+        <div class="d-grid">
+            <button class="btn-yellow" type="submit">Send Message <i class="fa-solid fa-arrow-up-right"></i></button>
+        </div>
+
+        }
+
+
+
     </div>
 </section>
 
